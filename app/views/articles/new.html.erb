@@ -1,0 +1,28 @@
+<%if @article.errors.any? %>
+<h2> Following error occured:</h2>
+<ul>
+  <% @article.errors.each do |msg| %>
+  <li><% msg %></li>
+  <% end%>
+</ul>
+<% end%>
+
+
+<h1>Create a new Article</h1>
+
+<%= form_for @article do |f|%>
+  <p>
+    <%= f.label :title%>
+    <br>
+    <%= f.text_field :title%>
+  </p>
+  <p>
+    <%= f.label :description%>
+    <br>
+    <%= f.text_area :description%>
+  </p>
+  <p>
+    <%= f.submit%>
+  </p>
+
+<%end%>
